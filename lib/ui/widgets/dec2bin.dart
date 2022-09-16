@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class Dec2Bin extends StatelessWidget {
+import '../controllers/converter_controller.dart';
+
+class Dec2Bin extends GetView<ConverterController> {
   const Dec2Bin({Key? key}) : super(key: key);
 
   @override
@@ -12,19 +14,25 @@ class Dec2Bin extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(8.0),
             alignment: Alignment.centerRight,
-            child: Text(
-              controller.decimal,
-              textAlign: TextAlign.right,
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 35),
+            child: Obx(
+              () => Text(
+                controller.decimal,
+                textAlign: TextAlign.right,
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 35),
+              ),
             ),
           ),
           Container(
             padding: const EdgeInsets.all(8.0),
             alignment: Alignment.centerRight,
-            child: Text(
-              controller.binary,
-              textAlign: TextAlign.right,
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 35),
+            child: Obx(
+              () => Text(
+                controller.binary,
+                textAlign: TextAlign.right,
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 35),
+              ),
             ),
           ),
           Expanded(
@@ -44,8 +52,8 @@ class Dec2Bin extends StatelessWidget {
                         color: Colors.white,
                       ),
                     ),
-                    // TODO: Llama al metodo updateBinary del controlador con un valor de 1.
-                    onPressed: () {},
+                    //  Llama al metodo updateDecimal del controlador con un valor de 1.
+                    onPressed: () => controller.updateDecimal(1),
                   ),
                 )),
                 Expanded(
@@ -60,8 +68,8 @@ class Dec2Bin extends StatelessWidget {
                       ),
                     ),
                     // we raise a new event
-                    // TODO: Llama al metodo updateBinary del controlador con un valor de 2.
-                    onPressed: () {},
+                    //  Llama al metodo updateDecimal del controlador con un valor de 2.
+                    onPressed: () => controller.updateDecimal(2),
                   ),
                 )),
                 Expanded(
@@ -76,8 +84,8 @@ class Dec2Bin extends StatelessWidget {
                       ),
                     ),
                     // we raise a new event
-                    // TODO: Llama al metodo updateBinary del controlador con un valor de 3.
-                    onPressed: () {},
+                    // Llama al metodo updateDecimal del controlador con un valor de 3.
+                    onPressed: () => controller.updateDecimal(3),
                   ),
                 )),
               ],
@@ -100,8 +108,8 @@ class Dec2Bin extends StatelessWidget {
                         color: Colors.white,
                       ),
                     ),
-                    // TODO: Llama al metodo updateBinary del controlador con un valor de 4.
-                    onPressed: () {},
+                    // Llama al metodo updateDecimal del controlador con un valor de 4.
+                    onPressed: () => controller.updateDecimal(4),
                   ),
                 )),
                 Expanded(
@@ -115,8 +123,8 @@ class Dec2Bin extends StatelessWidget {
                         color: Colors.white,
                       ),
                     ),
-                    // TODO: Llama al metodo updateBinary del controlador con un valor de 5.
-                    onPressed: () {},
+                    //  Llama al metodo updateDecimal del controlador con un valor de 5.
+                    onPressed: () => controller.updateDecimal(5),
                   ),
                 )),
                 Expanded(
@@ -130,8 +138,8 @@ class Dec2Bin extends StatelessWidget {
                         color: Colors.white,
                       ),
                     ),
-                    // TODO: Llama al metodo updateBinary del controlador con un valor de 6.
-                    onPressed: () {},
+                    //  Llama al metodo updateDecimal del controlador con un valor de 6.
+                    onPressed: () => controller.updateDecimal(6),
                   ),
                 )),
               ],
@@ -154,8 +162,8 @@ class Dec2Bin extends StatelessWidget {
                         color: Colors.white,
                       ),
                     ),
-                    // TODO: Llama al metodo updateBinary del controlador con un valor de 7.
-                    onPressed: () {},
+                    // Llama al metodo updateDecimal del controlador con un valor de 7.
+                    onPressed: () => controller.updateDecimal(7),
                   ),
                 )),
                 Expanded(
@@ -169,8 +177,8 @@ class Dec2Bin extends StatelessWidget {
                         color: Colors.white,
                       ),
                     ),
-                    // TODO: Llama al metodo updateBinary del controlador con un valor de 8.
-                    onPressed: () {},
+                    // Llama al metodo updateDecimal del controlador con un valor de 8.
+                    onPressed: () => controller.updateDecimal(8),
                   ),
                 )),
                 Expanded(
@@ -184,8 +192,8 @@ class Dec2Bin extends StatelessWidget {
                         color: Colors.white,
                       ),
                     ),
-                    // TODO: Llama al metodo updateBinary del controlador con un valor de 9.
-                    onPressed: () {},
+                    // Llama al metodo updateDecimal del controlador con un valor de 9.
+                    onPressed: () => controller.updateDecimal(9),
                   ),
                 )),
               ],
@@ -203,8 +211,8 @@ class Dec2Bin extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 4.0),
                       child: MaterialButton(
                         color: Theme.of(context).colorScheme.secondary,
-                        // TODO: Llama al metodo reset del controlador.
-                        onPressed: () {},
+                        // Llama al metodo reset del controlador.
+                        onPressed: () => controller.reset(),
                         child: const Text(
                           "Reset",
                           style: TextStyle(
@@ -226,8 +234,8 @@ class Dec2Bin extends StatelessWidget {
                             color: Colors.white,
                           ),
                         ),
-                        // TODO: Llama al metodo updateBinary del controlador con un valor de 0.
-                        onPressed: () {},
+                        // Llama al metodo updateDecimal del controlador con un valor de 0.
+                        onPressed: () => controller.updateDecimal(0),
                       ),
                     )),
               ],

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 void main() {
-  // TODO: Inyecta una instancia de ConverterController usando Get.put()
+  // Inyecta una instancia de ConverterController usando Get.put()
+  Get.put(ConverterController());
   runApp(const App());
 }
